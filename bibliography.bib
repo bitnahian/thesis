@@ -11,3 +11,914 @@ OPTmonth = {•},
 OPTnote = {•},
 OPTannote = {•}
 }
+
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+
+%Inbook{Knuth97,
+%  author =       "Donald E. Knuth",
+%  title =        "The Art of Computer Programming",
+%  booktitle =    "the booktitle",
+%  edition =      "3",
+%  volume =       "1",
+%  year =         "1997",
+%  publisher =    "Addison Wesley Longman Publishing Co., Inc.",
+%  editor =       "",
+%  number =       "",
+%  series =       "Fundamental Algorithms",
+%  type =         "",
+%  chapter =      "",
+%  pages =        "",
+%  address =      "",
+%  month =        "",
+%  note =         "(inbook)",
+%}
+
+%INBOOK{DK:73-inbook-full,
+%   author = "Donald E. Knuth",
+%   title = "Fundamental Algorithms (inbook w series)",
+%   volume = 1,
+%   series = "The Art of Computer Programming",
+%   publisher = "Addison-Wesley",
+%   address = "Reading, Massachusetts",
+%   edition = "Second",
+%   month = "10~" # jan,
+%   year = "1973",
+%   type = "Section",
+%   chapter = "1.2",
+%   pages = "10--119",
+%   note = "Full INBOOK entry (w series)",
+%}
+
+%INcollection{DK:74-incoll,
+%   author = "Donald E. Knuth",
+%   title = "Fundamental Algorithms (incoll)",
+%   volume = 1,
+%   booktitle = "The Art of Computer Programming",
+%   publisher = "Addison-Wesley",
+%   address = "Reading, Massachusetts",
+%   month = "10~" # jan,
+%   year = "1974",
+%   pages = "10--119",
+%   editor = "Bernard Rous",
+%   note = "This is a full incoll entry with an editor",
+%}
+
+%INcollection{DK:75-incollws,
+%   author = "Donald E. Knuth",
+%   title = "Fundamental Algorithms (incoll w series)",
+%   volume = 1,
+%   booktitle = "The Art of Computer Programming",
+%   series = "The Art of Computer Programming",
+%   publisher = "Addison-Wesley",
+%   address = "Reading, Massachusetts",
+%   month = "10~" # jan,
+%   year = "1975",
+%   pages = "10--119",
+%   editor = "Bernard Rous",
+%   note = "This is a full incoll entry with an editor and series",
+%}
+
+
+@book{Ramakrishnan:2002:DMS:560733,
+  author    = {Raghu Ramakrishnan and
+               Johannes Gehrke},
+  title     = {Database management systems {(3.} ed.)},
+  publisher = {McGraw-Hill},
+  year      = {2003},
+  isbn      = {978-0-07-115110-8},
+  timestamp = {Thu, 14 Apr 2011 14:43:21 +0200},
+  biburl    = {https://dblp.org/rec/bib/books/daglib/0011128},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@InProceedings{jindal2011relax,
+  author    = {Alekh Jindal and
+               Jens Dittrich},
+  editor    = {Mal{\'{u}} Castellanos and
+               Umeshwar Dayal and
+               Wolfgang Lehner},
+  title     = {Relax and Let the Database Do the Partitioning Online},
+  booktitle = {Enabling Real-Time Business Intelligence - 5th International Workshop,
+               {BIRTE} 2011, Held at the 37th International Conference on Very Large
+               Databases, {VLDB} 2011, Seattle, WA, USA, September 2, 2011, Revised
+               Selected Papers},
+  series    = {Lecture Notes in Business Information Processing},
+  volume    = {126},
+  pages     = {65--80},
+  publisher = {Springer},
+  year      = {2011},
+  url       = {https://doi.org/10.1007/978-3-642-33500-6\_5},
+  doi       = {10.1007/978-3-642-33500-6\_5},
+  timestamp = {Wed, 17 May 2017 14:25:00 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/birte/JindalD11},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@book{ozsu2011principles,
+  author    = {M. Tamer {\"{O}}zsu and
+               Patrick Valduriez},
+  title     = {Principles of Distributed Database Systems, Third Edition},
+  publisher = {Springer},
+  year      = {2011},
+  url       = {https://doi.org/10.1007/978-1-4419-8834-8},
+  doi       = {10.1007/978-1-4419-8834-8},
+  isbn      = {978-1-4419-8833-1},
+  timestamp = {Wed, 14 Nov 2018 10:12:21 +0100},
+  biburl    = {https://dblp.org/rec/bib/books/daglib/0029498},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+% Physical Tuning DB Automatic Engines
+ 
+@article{navathe1984vertical,
+  author    = {Shamkant B. Navathe and
+               Stefano Ceri and
+               Gio Wiederhold and
+               Jinglie Dou},
+  title     = {Vertical Partitioning Algorithms for Database Design},
+  journal   = {{ACM} Trans. Database Syst.},
+  volume    = {9},
+  number    = {4},
+  pages     = {680--710},
+  year      = {1984},
+  url       = {https://doi.org/10.1145/1994.2209},
+  doi       = {10.1145/1994.2209},
+  timestamp = {Tue, 06 Nov 2018 12:51:48 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/tods/NavatheCWD84},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{agrawal2004integrating,
+  author    = {Sanjay Agrawal and
+               Vivek R. Narasayya and
+               Beverly Yang},
+  editor    = {Gerhard Weikum and
+               Arnd Christian K{\"{o}}nig and
+               Stefan De{\ss}loch},
+  title     = {Integrating Vertical and Horizontal Partitioning Into Automated Physical
+               Database Design},
+  booktitle = {Proceedings of the {ACM} {SIGMOD} International Conference on Management
+               of Data, Paris, France, June 13-18, 2004},
+  pages     = {359--370},
+  publisher = {{ACM}},
+  year      = {2004},
+  url       = {https://doi.org/10.1145/1007568.1007609},
+  doi       = {10.1145/1007568.1007609},
+  timestamp = {Tue, 06 Nov 2018 11:07:37 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/AgrawalNY04},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{agrawal2006automatic,
+  author    = {Sanjay Agrawal and
+               Eric Chu and
+               Vivek R. Narasayya},
+  editor    = {Surajit Chaudhuri and
+               Vagelis Hristidis and
+               Neoklis Polyzotis},
+  title     = {Automatic physical design tuning: workload as a sequence},
+  booktitle = {Proceedings of the {ACM} {SIGMOD} International Conference on Management
+               of Data, Chicago, Illinois, USA, June 27-29, 2006},
+  pages     = {683--694},
+  publisher = {{ACM}},
+  year      = {2006},
+  url       = {https://doi.org/10.1145/1142473.1142549},
+  doi       = {10.1145/1142473.1142549},
+  timestamp = {Tue, 06 Nov 2018 11:07:40 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/AgrawalCN06},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{bruno2007online,
+  author    = {Nicolas Bruno and
+               Surajit Chaudhuri},
+  editor    = {Rada Chirkova and
+               Asuman Dogac and
+               M. Tamer {\"{O}}zsu and
+               Timos K. Sellis},
+  title     = {An Online Approach to Physical Design Tuning},
+  booktitle = {Proceedings of the 23rd International Conference on Data Engineering,
+               {ICDE} 2007, The Marmara Hotel, Istanbul, Turkey, April 15-20, 2007},
+  pages     = {826--835},
+  publisher = {{IEEE} Computer Society},
+  year      = {2007},
+  url       = {https://doi.org/10.1109/ICDE.2007.367928},
+  doi       = {10.1109/ICDE.2007.367928},
+  timestamp = {Wed, 16 Oct 2019 14:14:56 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/icde/BrunoC07},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{bruno2008constrained,
+  author    = {Nicolas Bruno and
+               Surajit Chaudhuri},
+  title     = {Constrained physical design tuning},
+  journal   = {{PVLDB}},
+  volume    = {1},
+  number    = {1},
+  pages     = {4--15},
+  year      = {2008},
+  url       = {http://www.vldb.org/pvldb/1/1453863.pdf},
+  doi       = {10.14778/1453856.1453863},
+  timestamp = {Thu, 16 Aug 2018 11:33:43 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/pvldb/BrunoC08},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{kimura2010coradd,
+  author    = {Hideaki Kimura and
+               George Huo and
+               Alexander Rasin and
+               Samuel Madden and
+               Stanley B. Zdonik},
+  title     = {{CORADD:} Correlation Aware Database Designer for Materialized Views
+               and Indexes},
+  journal   = {{PVLDB}},
+  volume    = {3},
+  number    = {1},
+  pages     = {1103--1113},
+  year      = {2010},
+  url       = {http://www.vldb.org/pvldb/vldb2010/pvldb\_vol3/R98.pdf},
+  doi       = {10.14778/1920841.1920979},
+  timestamp = {Tue, 02 Apr 2019 11:51:01 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/pvldb/KimuraHRMZ10},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{ozmen2010workload,
+  author    = {Oguzhan Ozmen and
+               Kenneth Salem and
+               Jiri Schindler and
+               Steve Daniel},
+  editor    = {Ahmed K. Elmagarmid and
+               Divyakant Agrawal},
+  title     = {Workload-aware storage layout for database systems},
+  booktitle = {Proceedings of the {ACM} {SIGMOD} International Conference on Management
+               of Data, {SIGMOD} 2010, Indianapolis, Indiana, USA, June 6-10, 2010},
+  pages     = {939--950},
+  publisher = {{ACM}},
+  year      = {2010},
+  url       = {https://doi.org/10.1145/1807167.1807268},
+  doi       = {10.1145/1807167.1807268},
+  timestamp = {Tue, 06 Nov 2018 11:07:40 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/OzmenSSD10},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{curino2010schism,
+  author    = {Carlo Curino and
+               Yang Zhang and
+               Evan P. C. Jones and
+               Samuel Madden},
+  title     = {Schism: a Workload-Driven Approach to Database Replication and Partitioning},
+  journal   = {{PVLDB}},
+  volume    = {3},
+  number    = {1},
+  pages     = {48--57},
+  year      = {2010},
+  url       = {http://www.vldb.org/pvldb/vldb2010/pvldb\_vol3/R04.pdf},
+  doi       = {10.14778/1920841.1920853},
+  timestamp = {Tue, 02 Apr 2019 11:51:01 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/pvldb/CurinoZJM10},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{quamar2013sword,
+  author    = {Abdul Quamar and
+               K. Ashwin Kumar and
+               Amol Deshpande},
+  editor    = {Giovanna Guerrini and
+               Norman W. Paton},
+  title     = {{SWORD:} scalable workload-aware data placement for transactional
+               workloads},
+  booktitle = {Joint 2013 {EDBT/ICDT} Conferences, {EDBT} '13 Proceedings, Genoa,
+               Italy, March 18-22, 2013},
+  pages     = {430--441},
+  publisher = {{ACM}},
+  year      = {2013},
+  url       = {https://doi.org/10.1145/2452376.2452427},
+  doi       = {10.1145/2452376.2452427},
+  timestamp = {Tue, 06 Nov 2018 16:59:06 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/edbt/QuamarKD13},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}ation},
+} 
+
+
+@inproceedings{Hilprecht:2019:TLP:3329859.3329876,
+  author    = {Benjamin Hilprecht and
+               Carsten Binnig and
+               Uwe R{\"{o}}hm},
+  editor    = {Rajesh Bordawekar and
+               Oded Shmueli},
+  title     = {Towards learning a partitioning advisor with deep reinforcement learning},
+  booktitle = {Proceedings of the Second International Workshop on Exploiting Artificial
+               Intelligence Techniques for Data Management, aiDM@SIGMOD 2019, Amsterdam,
+               The Netherlands, July 5, 2019},
+  pages     = {6:1--6:4},
+  publisher = {{ACM}},
+  year      = {2019},
+  url       = {https://doi.org/10.1145/3329859.3329876},
+  doi       = {10.1145/3329859.3329876},
+  timestamp = {Mon, 27 May 2019 17:11:22 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/HilprechtBR19},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/sigmod/NehmeB11,
+  author    = {Rimma V. Nehme and
+               Nicolas Bruno},
+  editor    = {Timos K. Sellis and
+               Ren{\'{e}}e J. Miller and
+               Anastasios Kementsietsidis and
+               Yannis Velegrakis},
+  title     = {Automated partitioning design in parallel database systems},
+  booktitle = {Proceedings of the {ACM} {SIGMOD} International Conference on Management
+               of Data, {SIGMOD} 2011, Athens, Greece, June 12-16, 2011},
+  pages     = {1137--1148},
+  publisher = {{ACM}},
+  year      = {2011},
+  url       = {https://doi.org/10.1145/1989323.1989444},
+  doi       = {10.1145/1989323.1989444},
+  timestamp = {Tue, 06 Nov 2018 11:07:39 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/NehmeB11},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{DBLP:conf/sigmod/ZhouBL12,
+  author    = {Jingren Zhou and
+               Nicolas Bruno and
+               Wei Lin},
+  editor    = {K. Sel{\c{c}}uk Candan and
+               Yi Chen and
+               Richard T. Snodgrass and
+               Luis Gravano and
+               Ariel Fuxman},
+  title     = {Advanced partitioning techniques for massively distributed computation},
+  booktitle = {Proceedings of the {ACM} {SIGMOD} International Conference on Management
+               of Data, {SIGMOD} 2012, Scottsdale, AZ, USA, May 20-24, 2012},
+  pages     = {13--24},
+  publisher = {{ACM}},
+  year      = {2012},
+  url       = {https://doi.org/10.1145/2213836.2213839},
+  doi       = {10.1145/2213836.2213839},
+  timestamp = {Tue, 06 Nov 2018 11:07:37 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/ZhouBL12},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{DBLP:journals/pvldb/LiZLG19,
+  author    = {Guoliang Li and
+               Xuanhe Zhou and
+               Shifu Li and
+               Bo Gao},
+  title     = {QTune: {A} Query-Aware Database Tuning System with Deep Reinforcement
+               Learning},
+  journal   = {{PVLDB}},
+  volume    = {12},
+  number    = {12},
+  pages     = {2118--2130},
+  year      = {2019},
+  url       = {http://www.vldb.org/pvldb/vol12/p2118-li.pdf},
+  timestamp = {Fri, 30 Aug 2019 13:15:08 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/pvldb/LiZLG19},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/sigmod/MaAHMPG18,
+  author    = {Lin Ma and
+               Dana Van Aken and
+               Ahmed Hefny and
+               Gustavo Mezerhane and
+               Andrew Pavlo and
+               Geoffrey J. Gordon},
+  editor    = {Gautam Das and
+               Christopher M. Jermaine and
+               Philip A. Bernstein},
+  title     = {Query-based Workload Forecasting for Self-Driving Database Management
+               Systems},
+  booktitle = {Proceedings of the 2018 International Conference on Management of
+               Data, {SIGMOD} Conference 2018, Houston, TX, USA, June 10-15, 2018},
+  pages     = {631--645},
+  publisher = {{ACM}},
+  year      = {2018},
+  url       = {https://doi.org/10.1145/3183713.3196908},
+  doi       = {10.1145/3183713.3196908},
+  timestamp = {Wed, 21 Nov 2018 12:44:08 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/MaAHMPG18},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{Zhu:2017:BTP:3127479.3128605,
+  author    = {Yuqing Zhu and
+               Jianxun Liu and
+               Mengying Guo and
+               Yungang Bao and
+               Wenlong Ma and
+               Zhuoyue Liu and
+               Kunpeng Song and
+               Yingchun Yang},
+  title     = {BestConfig: tapping the performance potential of systems via automatic
+               configuration tuning},
+  booktitle = {Proceedings of the 2017 Symposium on Cloud Computing, SoCC 2017, Santa
+               Clara, CA, USA, September 24-27, 2017},
+  pages     = {338--350},
+  publisher = {{ACM}},
+  year      = {2017},
+  url       = {https://doi.org/10.1145/3127479.3128605},
+  doi       = {10.1145/3127479.3128605},
+  timestamp = {Tue, 23 Apr 2019 14:18:16 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/cloud/ZhuLGBMLSY17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/sigmod/ZhangLZLXCXWCLR19,
+  author    = {Ji Zhang and
+               Yu Liu and
+               Ke Zhou and
+               Guoliang Li and
+               Zhili Xiao and
+               Bin Cheng and
+               Jiashu Xing and
+               Yangtao Wang and
+               Tianheng Cheng and
+               Li Liu and
+               Minwei Ran and
+               Zekang Li},
+  editor    = {Peter A. Boncz and
+               Stefan Manegold and
+               Anastasia Ailamaki and
+               Amol Deshpande and
+               Tim Kraska},
+  title     = {An End-to-End Automatic Cloud Database Tuning System Using Deep Reinforcement
+               Learning},
+  booktitle = {Proceedings of the 2019 International Conference on Management of
+               Data, {SIGMOD} Conference 2019, Amsterdam, The Netherlands, June 30
+               - July 5, 2019.},
+  pages     = {415--432},
+  publisher = {{ACM}},
+  year      = {2019},
+  url       = {https://doi.org/10.1145/3299869.3300085},
+  doi       = {10.1145/3299869.3300085},
+  timestamp = {Tue, 03 Sep 2019 08:30:40 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/ZhangLZLXCXWCLR19},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/sigmod/AkenPGZ17,
+  author    = {Dana Van Aken and
+               Andrew Pavlo and
+               Geoffrey J. Gordon and
+               Bohan Zhang},
+  editor    = {Semih Salihoglu and
+               Wenchao Zhou and
+               Rada Chirkova and
+               Jun Yang and
+               Dan Suciu},
+  title     = {Automatic Database Management System Tuning Through Large-scale Machine
+               Learning},
+  booktitle = {Proceedings of the 2017 {ACM} International Conference on Management
+               of Data, {SIGMOD} Conference 2017, Chicago, IL, USA, May 14-19, 2017},
+  pages     = {1009--1024},
+  publisher = {{ACM}},
+  year      = {2017},
+  url       = {https://doi.org/10.1145/3035918.3064029},
+  doi       = {10.1145/3035918.3064029},
+  timestamp = {Tue, 06 Nov 2018 11:07:38 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/AkenPGZ17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/sigmod/DurandPPMBSSRB18,
+  author    = {Gabriel Campero Durand and
+               Marcus Pinnecke and
+               Rufat Piriyev and
+               Mahmoud Mohsen and
+               David Broneske and
+               Gunter Saake and
+               Maya S. Sekeran and
+               Fabi{\'{a}}n Rodriguez and
+               Laxmi Balami},
+  editor    = {Rajesh Bordawekar and
+               Oded Shmueli},
+  title     = {GridFormation: Towards Self-Driven Online Data Partitioning using
+               Reinforcement Learning},
+  booktitle = {Proceedings of the First International Workshop on Exploiting Artificial
+               Intelligence Techniques for Data Management, aiDM@SIGMOD 2018, Houston,
+               TX, USA, June 10, 2018},
+  pages     = {1:1--1:7},
+  publisher = {{ACM}},
+  year      = {2018},
+  url       = {https://doi.org/10.1145/3211954.3211956},
+  doi       = {10.1145/3211954.3211956},
+  timestamp = {Wed, 21 Nov 2018 12:44:08 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/DurandPPMBSSRB18},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@book{sutton2018reinforcement,
+  title={Reinforcement learning: An introduction},
+  author={Sutton, Richard S and Barto, Andrew G},
+  year={2018},
+  publisher={MIT press}
+}
+
+@article{watkins1992q,
+  title={Q-learning},
+  author={Watkins, Christopher JCH and Dayan, Peter},
+  journal={Machine learning},
+  volume={8},
+  number={3-4},
+  pages={279--292},
+  year={1992},
+  publisher={Springer}
+}
+
+
+@inproceedings{zamanian2015locality,
+  author    = {Erfan Zamanian and
+               Carsten Binnig and
+               Abdallah Salama},
+  editor    = {Timos K. Sellis and
+               Susan B. Davidson and
+               Zachary G. Ives},
+  title     = {Locality-aware Partitioning in Parallel Database Systems},
+  booktitle = {Proceedings of the 2015 {ACM} {SIGMOD} International Conference on
+               Management of Data, Melbourne, Victoria, Australia, May 31 - June
+               4, 2015},
+  pages     = {17--30},
+  publisher = {{ACM}},
+  year      = {2015},
+  url       = {https://doi.org/10.1145/2723372.2723718},
+  doi       = {10.1145/2723372.2723718},
+  timestamp = {Tue, 06 Nov 2018 11:07:37 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/ZamanianBS15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{chaiken2008scope,
+  author    = {Ronnie Chaiken and
+               Bob Jenkins and
+               Per{-}{\AA}ke Larson and
+               Bill Ramsey and
+               Darren Shakib and
+               Simon Weaver and
+               Jingren Zhou},
+  title     = {{SCOPE:} easy and efficient parallel processing of massive data sets},
+  journal   = {{PVLDB}},
+  volume    = {1},
+  number    = {2},
+  pages     = {1265--1276},
+  year      = {2008},
+  url       = {http://www.vldb.org/pvldb/1/1454166.pdf},
+  doi       = {10.14778/1454159.1454166},
+  timestamp = {Thu, 16 Aug 2018 11:33:43 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/pvldb/ChaikenJLRSWZ08},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{zhou2010incorporating,
+  author    = {Jingren Zhou and
+               Per{-}{\AA}ke Larson and
+               Ronnie Chaiken},
+  editor    = {Feifei Li and
+               Mirella M. Moro and
+               Shahram Ghandeharizadeh and
+               Jayant R. Haritsa and
+               Gerhard Weikum and
+               Michael J. Carey and
+               Fabio Casati and
+               Edward Y. Chang and
+               Ioana Manolescu and
+               Sharad Mehrotra and
+               Umeshwar Dayal and
+               Vassilis J. Tsotras},
+  title     = {Incorporating partitioning and parallel plans into the {SCOPE} optimizer},
+  booktitle = {Proceedings of the 26th International Conference on Data Engineering,
+               {ICDE} 2010, March 1-6, 2010, Long Beach, California, {USA}},
+  pages     = {1060--1071},
+  publisher = {{IEEE} Computer Society},
+  year      = {2010},
+  url       = {https://doi.org/10.1109/ICDE.2010.5447802},
+  doi       = {10.1109/ICDE.2010.5447802},
+  timestamp = {Wed, 16 Oct 2019 14:14:56 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/icde/ZhouLC10},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{o2007star,
+  author    = {Patrick E. O'Neil and
+               Elizabeth J. O'Neil and
+               Xuedong Chen and
+               Stephen Revilak},
+  editor    = {Raghunath Othayoth Nambiar and
+               Meikel Poess},
+  title     = {The Star Schema Benchmark and Augmented Fact Table Indexing},
+  booktitle = {Performance Evaluation and Benchmarking, First {TPC} Technology Conference,
+               {TPCTC} 2009, Lyon, France, August 24-28, 2009, Revised Selected Papers},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {5895},
+  pages     = {237--252},
+  publisher = {Springer},
+  year      = {2009},
+  url       = {https://doi.org/10.1007/978-3-642-10424-4\_17},
+  doi       = {10.1007/978-3-642-10424-4\_17},
+  timestamp = {Tue, 14 May 2019 10:00:46 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/tpctc/ONeilOCR09},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{Nambiar:2006:MT:1182635.1164217,
+  author    = {Raghunath Othayoth Nambiar and
+               Meikel Poess},
+  editor    = {Umeshwar Dayal and
+               Kyu{-}Young Whang and
+               David B. Lomet and
+               Gustavo Alonso and
+               Guy M. Lohman and
+               Martin L. Kersten and
+               Sang Kyun Cha and
+               Young{-}Kuk Kim},
+  title     = {The Making of {TPC-DS}},
+  booktitle = {Proceedings of the 32nd International Conference on Very Large Data
+               Bases, Seoul, Korea, September 12-15, 2006},
+  pages     = {1049--1058},
+  publisher = {{ACM}},
+  year      = {2006},
+  url       = {http://dl.acm.org/citation.cfm?id=1164217},
+  timestamp = {Thu, 30 Apr 2015 18:34:40 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/vldb/OthayothP06},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{Cole:2011:MWC:1988842.1988850,
+  author    = {Richard L. Cole and
+               Florian Funke and
+               Leo Giakoumakis and
+               Wey Guy and
+               Alfons Kemper and
+               Stefan Krompass and
+               Harumi A. Kuno and
+               Raghunath Othayoth Nambiar and
+               Thomas Neumann and
+               Meikel Poess and
+               Kai{-}Uwe Sattler and
+               Michael Seibold and
+               Eric Simon and
+               Florian Waas},
+  editor    = {Goetz Graefe and
+               Kenneth Salem},
+  title     = {The mixed workload CH-benCHmark},
+  booktitle = {Proceedings of the Fourth International Workshop on Testing Database
+               Systems, DBTest 2011, Athens, Greece, June 13, 2011},
+  pages     = {8},
+  publisher = {{ACM}},
+  year      = {2011},
+  url       = {https://doi.org/10.1145/1988842.1988850},
+  doi       = {10.1145/1988842.1988850},
+  timestamp = {Tue, 06 Nov 2018 11:07:39 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigmod/ColeFGGKKKNNPSSSW11},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@misc{Datapart51:online,
+author = {},
+title = {Data partitioning guidance - Best practices for cloud applications | Microsoft Docs},
+howpublished = {\url{https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning}},
+month = {},
+year = {},
+note = {(Accessed on 06/21/2020)}
+}
+@book{DBLP:books/mg/SKS20,
+  author    = {Avi Silberschatz and
+               Henry F. Korth and
+               S. Sudarshan},
+  title     = {Database System Concepts, Seventh Edition},
+  publisher = {McGraw-Hill Book Company},
+  year      = {2020}
+}
+
+@inproceedings{tpc-ch-schema,
+author = {Psaroudakis, Iraklis and Wolf, Florian and May, Norman and Neumann, Thomas and Böhm, Alexander and Ailamaki, Anastasia and Sattler, Kai-Uwe},
+year = {2014},
+month = {09},
+pages = {},
+title = {Scaling Up Mixed Workloads: A Battle of Data Freshness, Flexibility, and Scheduling},
+doi = {10.1007/978-3-319-15350-6_7}
+}
+
+@article{DBLP:journals/pvldb/LuSJM17,
+  author    = {Yi Lu and
+               Anil Shanbhag and
+               Alekh Jindal and
+               Samuel Madden},
+  title     = {AdaptDB: Adaptive Partitioning for Distributed Joins},
+  journal   = {Proc. {VLDB} Endow.},
+  volume    = {10},
+  number    = {5},
+  pages     = {589--600},
+  year      = {2017}
+}

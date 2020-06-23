@@ -2,22 +2,25 @@
 \documentclass[12pt,oneside]{book}
 \input{frontmatter/preamble} 
 \usepackage{style/title}[PhD]
+\usepackage{amsmath}
+\usepackage{minted}
+
 
 %\makenomenclature
 
 % Add your bibtex file here
-%\addbibresource{library.bib}
+\addbibresource{bibliography.bib}
 
 %------------------------ Main Document --------------------------
 \begin{document}
 	
 	%-------------- Information For The Title Page
-	\title{A cool sounding title goes here}
-	\author{Mr. Author}
-	\date{2018} 
-	\degree{Doctor of Philosophy (PhD)} 
-	\supervisor[1]{Dr. Doctor} % For multiple supervisors, \supervisor[2]{Supervisor 1 & 2}
-	\school{Physics}
+	\title{RL4DBPartitioning}
+	\author{Nahian-Al Hasan}
+	\date{2020} 
+	\degree{Bachelor of Computer Science and Technology (Honours)} 
+	\supervisor[1]{A/Prof. Uwe Roehm} % For multiple supervisors, \supervisor[2]{Supervisor 1 & 2}
+	\school{School of Computer Science}
 	
 	%-------------- Front Matter
 	\frontmatter
@@ -44,7 +47,9 @@
 	\mainmatter
 	\include{chapters/chapter1}
 	\include{chapters/chapter2}
-	
+	\include{chapters/chapter3}
+	\include{chapters/chapter4}
+
 	%-------------- Appendices
 	\cleardoublepage
 	\appendix
