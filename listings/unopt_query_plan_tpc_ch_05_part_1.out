@@ -1,0 +1,13 @@
+EXPLAIN
+GatherMerge [remote_0.revenue DESC] partitions:all est_rows:60 alias:remote_0
+Project [r1.n_name, revenue] est_rows:60
+Sort [SUM(r1.revenue) DESC]
+HashGroupBy [SUM(r1.revenue) AS revenue] groups:[r1.n_name]
+TableScan r1 storage:list stream:yes table_type:sharded est_table_rows:60 est_filtered:60
+Repartition [nation.n_name, revenue] AS r1 shard_key:[n_name] est_rows:60 est_select_cost:97,200,000
+ShuffleGroupBy [SUM(r0.ol_amount) AS revenue] groups:[nation.n_name]
+Filter [r0.ol_d_id = customer.c_d_id AND r0.ol_w_id = customer.c_w_id AND stock.s_w_id = customer.c_w_id]
+HashJoin [orders.o_c_id = customer.c_id AND orders.o_w_id = customer.c_w_id AND orders.o_d_id = customer.c_d_id AND supplier.su_nationkey = customer.`expr(ASCII(SUBSTRING(customer.c_state,?,?)))_0`]
+|---HashTableBuild shared_build:yes alias:customer
+|   Project [customer_0.c_id, customer_0.c_w_id, customer_0.c_d_id, customer_0.c_state, ASCII(SUBSTRING(customer_0.c_state,1,1)) AS `expr(ASCII(SUBSTRING(customer.c_state,?,?)))_0`] est_rows:60,000
+|   TableScan tpcch_test.customer AS customer_0, PRIMARY KEY (c_w_id, c_d_id, c_id) table_type:reference_rowstore est_table_rows:60,000 est_filtered:60,000

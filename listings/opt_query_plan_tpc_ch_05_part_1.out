@@ -1,0 +1,12 @@
+EXPLAIN
+Project [remote_0.n_name, revenue] est_rows:1
+Sort [SUM(remote_0.revenue) DESC]
+HashGroupBy [SUM(remote_0.revenue) AS revenue] groups:[remote_0.n_name]
+Gather partitions:all est_rows:1 alias:remote_0
+Project [nation.n_name, revenue] est_rows:1
+HashGroupBy [SUM(orderline.ol_amount) AS revenue] groups:[nation.n_name]
+Filter [orderline.ol_d_id = customer.c_d_id AND orderline.ol_w_id = customer.c_w_id AND stock.s_w_id = customer.c_w_id]
+HashJoin [orders.o_c_id = customer.c_id AND orders.o_w_id = customer.c_w_id AND orders.o_d_id = customer.c_d_id AND supplier.su_nationkey = customer.`expr(ASCII(SUBSTRING(customer.c_state,?,?)))_0`]
+|---HashTableBuild shared_build:yes alias:customer
+|   Project [customer_0.c_id, customer_0.c_w_id, customer_0.c_d_id, customer_0.c_state, ASCII(SUBSTRING(customer_0.c_state,1,1)) AS `expr(ASCII(SUBSTRING(customer.c_state,?,?)))_0`] est_rows:60,000
+|   TableScan tpcch_test.customer AS customer_0, PRIMARY KEY (c_w_id, c_d_id, c_id) table_type:reference_rowstore est_table_rows:60,000 est_filtered:60,000

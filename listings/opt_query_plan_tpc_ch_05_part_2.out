@@ -1,0 +1,20 @@
+HashJoin [supplier.su_suppkey = stock.s_w_id * stock.s_i_id % 10000 AND supplier.su_nationkey = nation.n_nationkey]
+|---HashTableBuild shared_build:yes alias:supplier
+|   Project [supplier_0.su_suppkey, supplier_0.su_nationkey] est_rows:10,000
+|   TableScan tpcch_test.supplier AS supplier_0, PRIMARY KEY (su_suppkey) table_type:reference_rowstore est_table_rows:10,000 est_filtered:10,000
+HashJoin [region.r_regionkey = nation.n_regionkey]
+|---HashTableBuild shared_build:yes alias:nation
+|   Project [nation_1.n_name, nation_1.n_nationkey, nation_1.n_regionkey] est_rows:62
+|   TableScan tpcch_test.nation AS nation_1, PRIMARY KEY (n_nationkey, n_regionkey) table_type:reference_rowstore est_table_rows:62 est_filtered:62
+Filter [stock.s_w_id = orders.o_w_id]
+NestedLoopJoin
+|---IndexSeek tpcch_test.stock, PRIMARY KEY (s_w_id, s_i_id) scan:[s_w_id = orderline.ol_w_id AND s_i_id = orderline.ol_i_id] table_type:reference_rowstore est_table_rows:200,000 est_filtered:200,000
+HashJoin [orders.o_id = orderline.ol_o_id AND orders.o_w_id = orderline.ol_w_id AND orders.o_d_id = orderline.ol_d_id]
+|---HashTableBuild alias:orders
+|   Project [orders_0.o_c_id, orders_0.o_w_id, orders_0.o_d_id, orders_0.o_id] est_rows:60,000
+|   Filter [orders_0.o_entry_d >= '2007-01-02 00:00:00.000000']
+|   TableScan tpcch_test.orders AS orders_0, PRIMARY KEY (o_w_id, o_d_id, o_id) table_type:sharded_rowstore est_table_rows:60,000 est_filtered:60,000
+NestedLoopJoin
+|---TableScan tpcch_test.orderline, PRIMARY KEY (ol_w_id, ol_d_id, ol_o_id, ol_number) table_type:sharded_rowstore est_table_rows:600,000 est_filtered:600,000
+Filter [region.r_name = 'EUROPE']
+TableScan tpcch_test.region, PRIMARY KEY (r_regionkey) table_type:reference_rowstore est_table_rows:5 est_filtered:1

@@ -1,0 +1,12 @@
++-----------------------------------------------------------------------------------------------+
+| EXPLAIN                                                                                       |
++-----------------------------------------------------------------------------------------------+
+| Project [t.id, t.a, t.b, r0.a_1, r0.b_2]                                                      |
+| Gather partitions:all est_rows:1                                                              |
+| Project [t.id, t.a, t.b, r0.a_1, r0.b_2] est_rows:1 est_select_cost:3                         |
+| NestedLoopJoin                                                                                |
+| |---IndexSeek db1.t, PRIMARY KEY (id) scan:[id = r0.b_2] est_table_rows:1 est_filtered:1      |
+| TableScan r0 storage:list stream:no                                                           |
+| Repartition [ct.a AS a_1, ct.b AS b_2] AS r0 shard_key:[b_2] est_rows:1                       |
+| ColumnStoreScan db1.ct, KEY a (a) USING CLUSTERED COLUMNSTORE est_table_rows:1 est_filtered:1 |
++-----------------------------------------------------------------------------------------------+

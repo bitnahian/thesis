@@ -101,14 +101,20 @@ Let's consider the following two relations:
     \item Reserves (\underline{\textit{sid}: \textbf{integer}}, \textit{bid}: \textbf{integer}, \textit{day}: \textbf{date}, \textit{rname}: \textbf{string})
 \end{itemize}
 
-Even simple operations such as scanning a relation, selection and projection are affected by fragmentation and replication \cite{Ramakrishnan:2002:DMS:560733}. Consider the follwing query:
+Even simple operations such as scanning a relation, selection and projection are affected by fragmentation and replication \cite{Ramakrishnan:2002:DMS:560733}. Consider the following query:
 
+
+\begin{listing}[ht]
 \inputminted[frame=lines,
             breaklines=true,
             framesep=2mm,
             fontsize=\footnotesize]
             {sql}
             {listings/non-join-query.sql}
+\caption{Non-join query example}
+\label{listing:non-join-query}
+\end{listing}
+
 
 Imagine that the Sailors relation is horizontally partitioned, with all tuples having a rating less than 5 at \textit{Shanghai} and all tuples having a rating greater than 5 at \textit{Tokyo}.
 
@@ -248,7 +254,7 @@ All the partitioning techniques are implemented into the Scope system at Microso
 % This is an area where recommender systems for multiple partitioning strategies may be considered. Current partitioning recommender systems simply default to the partitioning strategy chosen by the query optimiser and aim to find the best physical partitioning layout. It would certainly be interesting to incorporate different data shuffling strategies as part of a partitioning recommender system to optimise performance gains.
 
 \section{Adaptive Partitioning for Distributed Joins}
-Perhaps the closest approach to the methodology used by \citeauthor{Hilprecht:2019:TLP:3329859.3329876} was used by \citeauthor{DBLP:journals/pvldb/LuSJM17} in their paper \textbf{AdaptDB}. The core methodology of their approach involved finding suitable partitions for distributed query workloads in an iterative and adaptive manner. Their approach works by partitioning datasets across a cluster and incrementally refining data partitioning as queries are run. Two of their core contributions are i)\textit{hyper-joins} that avoid expensive \textbf{data shuffling} by identifying storage blocks of the joining tables that overlap on the join attribute, and only joining those blocks. In order to achieve hyper-joins to work well, they propose ii) \textit{smooth partitioning} to re-partition small portions of the tables on join attributes as queries run. 
+Perhaps the closest approach to the methodology used by \citeauthor{Hilprecht:2019:TLP:3329859.3329876} was used by \citeauthor{DBLP:journals/pvldb/LuSJM17} in their paper \textbf{AdaptDB}. The core methodology of their approach involved finding suitable partitions for distributed query workloads in an iterative and adaptive manner. Their approach works by partitioning datasets across a cluster and incrementally refining data partitioning as queries are run. Two of their core contributions are i) \textit{hyper-joins} that avoid expensive \textbf{data shuffling} by identifying storage blocks of the joining tables that overlap on the join attribute, and only joining those blocks. In order to achieve hyper-joins to work well, they propose ii) \textit{smooth partitioning} to re-partition small portions of the tables on join attributes as queries run. 
 The core difference between our approach and AdaptDB is that \citeauthor{DBLP:journals/pvldb/LuSJM17} consider \textbf{hyper-joins} as an optimisation problem as opposed to our approach using Q-Learning to do the same (further discussed in Section~\ref{sec:q-learning}). They introduce an optimal solution based on mixed integer programming for hyper-joins and employ smooth repartitioning to move blocks from one partitioning scheme to another before repartitioning the whole dataset. In conclusion, they claim that AdaptDB provides improved query performance over shuffle joins, and effectively adapts to changes in workload over time. From their work, we take motivation from the fact that their approach specifically works to reduce data-shuffling and repartitioning. Incorporating this target into our approach is a core aspect in this thesis, which we will discuss in Section~\ref{Methods}.
 
 
@@ -295,7 +301,7 @@ With the Q-function, the expected discounted future rewards are approximated as 
 \end{equation}
 The rewards are discounted with a factor $\gamma < 1$ to account for a higher degree of uncertainty for later states. If the approximation is good enough we can choose an optimal action for a state $s$ as $\text{argmax}_{a \in A} Q(s,a)$. Selecting random actions offers a trade-off between exploration and exploitation during training the advisor. Usually, exploration is performed through picking a random action with probability $\epsilon$. This probability is decayed over time \cite{sutton2018reinforcement} by multiplication with a factor called \textit{epsilon decay}. 
 
-The optimal action-value function obeys an important identity known as the \textit{Bellman equation}. This is based on the following intuition: if the optimal value $Q^*(s',a')$ if the sequence $s'$ at the next time-step was known for all possible actions $a'$, then the optimal strategy is to select the action $a'$ minimising the expected value of $r + \gamma Q^*(s',a')$.
+The optimal action-value function obeys an important identity known as the \textit{Bellman equation}. This is based on the following intuition: if the optimal value $Q^*(s',a')$ off the sequence $s'$ at the next time-step was known for all possible actions $a'$, then the optimal strategy is to select the action $a'$ minimising the expected value of $r + \gamma Q^*(s',a')$.
 The basic idea behind many reinforcement learning algorithms is to estimate the action-value function, by using the Bellman equation as an iterative update, $Q_{i+1}(s,a) = \mathbb{E}[r+\gamma \max_{a'}Q_i(s',a')| s,a]$. Such \textit{value iteration} algorithms converge to the optimal action-value function, $Q_i \xrightarrow[]{} Q^*$ as $i \xrightarrow[]{} \infty$\cite{sutton2018reinforcement}. In practical, this approach is impractical, because the action-value function is estimated separately for each sequence, without any generalisation. 
 
 One of the ways of realising the Q-function is through Deep-Q-Learning (or Deep Reinforcement Learning) \cite{Zhu:2017:BTP:3127479.3128605}.  For Deep-Q-Learning, a neural network $Q_\theta(s,a)$ with weights $\theta$ is used for the approximation. Having observed a state $s_t$ and an action $a_t$, the corresponding immediate reward $r_t$ and the future state $s_{t+1}$ the network is updated via Stochastic Gradient (SGD) and the squared error loss:

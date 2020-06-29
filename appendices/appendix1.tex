@@ -1,3 +1,27 @@
-\chapter{Your first appendix}
-\section{The title of the first section}
-The appendices work exactly the same way as chapters, they are numbered with letters rather than numbers though.
+\chapter{Optimised Query Plan, Query-05}
+\section{Query Plan output from System-X}
+\subsection{Partitioning Scheme}
+\begin{itemize}
+    \item All relations replicated
+    \item orderline \texttt{SHARD KEY(ol\_o\_id, ol\_w\_id, ol\_d\_id)}
+    \item orders \texttt{SHARD KEY(o\_id, o\_w\_id, o\_d\_id)}
+
+\end{itemize}
+\begin{listing}[ht]
+\inputminted[frame=lines,
+            breaklines=true,
+            framesep=2mm,
+            fontsize=\footnotesize]
+            {sql}
+            {listings/opt_query_plan_tpc_ch_05_part_1.out}
+\end{listing}
+\begin{listing}[ht]
+\inputminted[frame=lines,
+            breaklines=true,
+            framesep=2mm,
+            fontsize=\footnotesize]
+            {sql}
+            {listings/opt_query_plan_tpc_ch_05_part_2.out}
+\caption{Query plan for TPC-CH Query 05 for optimised partitioning scheme}
+\label{listing:tpc-ch-query-05-explain}
+\end{listing}
