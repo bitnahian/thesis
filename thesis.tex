@@ -5,7 +5,23 @@
 \usepackage{amsmath}
 \usepackage{minted}
 \usepackage{setspace}
-\onehalfspacing
+\usepackage{caption}
+\captionsetup[table]{labelsep=space}
+\captionsetup[figure]{labelsep=space}
+
+\newcommand{\mycaption}[2]{\caption[#1]{\textbar\, \textbf{#1.} #2}}
+
+\usepackage{subcaption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{algorithm}          %  float wrapper for algorithms.
+\usepackage{algpseudocode}
+\usepackage{hhline}
+\usepackage{float}
+
+\DeclareMathOperator*{\argmax}{argmax}
+
+
+\doublespacing
 
 %\makenomenclature
 
@@ -16,7 +32,7 @@
 \begin{document}
 	
 	%-------------- Information For The Title Page
-	\title{RL4DBPartitioning}
+	\title{Incorporating the Query Optimizer into a \hspace{5cm}Database Partitioning Advisor using \hspace{5cm} Deep Reinforcement Learning}
 	\author{Nahian-Al Hasan}
 	\date{2020} 
 	\degree{Bachelor of Computer Science and Technology (Honours)} 
@@ -47,19 +63,29 @@
 	\cleardoublepage
 	\mainmatter
 	\include{chapters/chapter1}
-	\include{chapters/chapter2}
+	\include{chapters/chapter2a}
+	\include{chapters/chapter2b}
 	\include{chapters/chapter3}
 	\include{chapters/chapter4}
+    \include{chapters/chapter5}
+
 
 	%-------------- Appendices
 	\cleardoublepage
 	\appendix
 	\include{appendices/appendix1}
+	\include{appendices/appendix2}
+	\include{appendices/appendix3}
+	\include{appendices/appendix4}
+	\include{appendices/appendix5}
+	\include{appendices/appendix6}
+	\include{appendices/appendix7}
+	
 	
 	%-------------- Bibliography
 	\cleardoublepage
 	\phantomsection  
-	\addcontentsline{toc}{chapter}{Bibliography}              
+	\addcontentsline{toc}{chapter}{Bibliography}             
 	\printbibliography
 	
 \end{document}  

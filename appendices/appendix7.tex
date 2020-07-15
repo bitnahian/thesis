@@ -1,0 +1,122 @@
+\chapter{Partitioning Strategies}
+\label{appendix:7}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|l|l|l|}
+\cline{2-4}
+ &
+  \multicolumn{3}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{Partitioning Strategy}} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{DAE8FC}\textbf{Table}} &
+  \textbf{Heuristic 1} &
+  \textbf{Heuristic 2} &
+  \textbf{RL Offline} \\ \hline
+\multicolumn{1}{|l|}{Customer} &
+  SHARD (Customer-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Customer-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{OrderLine} &
+  SHARD (Order-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id,\\  District-Id, Order-Id, \\ Order-Number)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{NewOrder} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Order-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Order-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Stock} &
+  SHARD (Item-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ Item-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ Item-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Orders} &
+  SHARD (Customer-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Order-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Item} &
+  SHARD (Item-Id) &
+  REPLICATED &
+  REPLICATED \\ \hline
+\multicolumn{1}{|l|}{Nation} &
+  REPLICATED &
+  REPLICATED &
+  REPLICATED \\ \hline
+\multicolumn{1}{|l|}{Region} &
+  REPLICATED &
+  REPLICATED &
+  REPLICATED \\ \hline
+\multicolumn{1}{|l|}{Supplier} &
+  REPLICATED &
+  REPLICATED &
+  SHARD (Supplier-Key) \\ \hline
+\end{tabular}%
+}
+\caption{Partitioning strategies for Heuristics 1, 2 and RL Offline.}
+\label{tab:partitioning-strategies-1}
+\end{table}
+
+
+
+
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|l|l|l|}
+\cline{2-4}
+ &
+  \multicolumn{3}{c|}{\cellcolor[HTML]{DAE8FC}\textbf{Partitioning Strategy}} \\ \hline
+\multicolumn{1}{|l|}{\cellcolor[HTML]{DAE8FC}\textbf{Table}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}RL Offline + Online \\ (Single Key)\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}RL Offline + Online \\ (Compound Key)\end{tabular}} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}RL Offline + Online \\ + Query Featurisation\end{tabular}} \\ \hline
+\multicolumn{1}{|l|}{Customer} &
+  REPLICATED &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{OrderLine} &
+  SHARD (Order-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Order-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{NewOrder} &
+  SHARD (Order-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Order-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Stock} &
+  REPLICATED &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ Item-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ Item-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Orders} &
+  SHARD (Order-Id) &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id)\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}SHARD (Warehouse-Id, \\ District-Id, Order-Id)\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{Item} &
+  REPLICATED &
+  REPLICATED &
+  REPLICATED \\ \hline
+\multicolumn{1}{|l|}{Nation} &
+  REPLICATED &
+  REPLICATED &
+  SHARD (Region-Key) \\ \hline
+\multicolumn{1}{|l|}{Region} &
+  REPLICATED &
+  REPLICATED &
+  SHARD (Region-Key) \\ \hline
+\multicolumn{1}{|l|}{Supplier} &
+  REPLICATED &
+  REPLICATED &
+  SHARD (Supplier-Key) \\ \hline
+\end{tabular}%
+}
+\caption{Partitioning strategies for RL Offline + Online and RL Offline + Online + Query Featurisation.}
+\label{tab:partitioning-strategies-2}
+\end{table}

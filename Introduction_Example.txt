@@ -1,0 +1,86 @@
+Introduction
+
+In today's era of Big Data, data-driven applications rely on the efficient and timely
+analysis of large datasets. Examples are decision support dashboards, online marketing, 
+or the monitoring of infectious diseases to support political decisions.
+With the ever increasing data sizes and the requirement to support a variety of concurrent
+users with different information needs, performing those analysis' on a single database is
+not feasible anymore. A far more scaleable solution are distributed database systems which
+run on a cluster of multiple computer nodes that share the workload and that can scale 
+easily with increasing data volumes or query workloads by adding more nodes. 
+
+Distributed database systems are however more difficult to configure and optimise
+than centralised databases. Beside the known issue of the access cost differences between
+secondary storage (HDD or SSD) and main memory, we have to consider the additional cost
+of network traffic required for distributed data analysis, in particular for joins operations
+between different tables. State of the practice is to apply some general heuristics about
+partitioning data among the available nodes and potentially replicate the data too for
+fail safety. This is either done generically with the same method for all data, independently
+on the actual query workload, or is a manual process requiring an experienced DBA.
+This can result in some very sub-optimal data placements, meaning longer execution times, 
+and on a cloud-based infrastructure also leading to higher costs for additional network 
+traffic and computing resources.
+
+This thesis looks at the idea of automating the data placement decisions using a 
+machine learning-based partitioning advisor. The general idea is train a partitioning
+advisor component with different potential query workloads, such that it 'learns' the
+best physical data placement in terms of data partitioning (storing table fragments across
+multiple nodes) and data replication (storing the copies of a table on multiple nodes).
+Once a corresponding data placement model has been learned, the advisor can then be used
+as an automatic component of a distributed database to decide automatically given the
+current database schema and the workload how to place the data for best performance.
+
+In this thesis, we investigate the applicability of re-inforcement learning to this problem.
+There are several challenges involved. Firstly, we have to formalise the problem of data 
+placement for given workloads into corresponding states and actions representations for
+the ML approach. Secondly, to cater for hardware variations such as different main memory
+sizes, disk speeds and network capacities which influence the query performance too, we 
+follow an approach with separate offline and online learning phases, where the online phase
+will 'learn' these hardware effects by actual executing the corresponding query workload.
+In order to avoid exorbitant training times, the starting state of the partitioning advisor
+in the online phase is informed by a previous offline training phase.
+Lastly, to further keep the training times reasonable, especially in the online phase,
+we apply various optimisation such as query caching and early model convergence.
+
+The work in this Honours thesis is based on the ideas of Hilprecht et al (2020) who 
+initially developed the concept of a RL-based partitioning advisor for distributed databases
+using a combined offline/online learning model. This thesis extends this initial work
+in multiple important directions: Firstly, it introduces query featurisation which allows to 
+abstract from query workload variations by considering the normalised query execution 
+plans. Secondly and most importantly, this thesis connects the online training phase with
+the query optimiser of the database systems so that the cost estimates of the database
+can be taken into account too. As we will show in the performance evaluation, this can
+greatly reduce both the training time and lead to better partitioning schemes than with
+a hand-written query cost model as used by Hilprecht et al. Thirdly, the thesis extends 
+the state model such that co-partitioning schemes with composite partition keys are 
+supported, which leads to a clear improvement in the resulting chosen physical designs.
+The approach of this thesis is evaluated with a commercial distributed in-memory database
+and using the TPC-CH benchmark, it is shown that proposed RL4DBPartitioner ("insert your name
+here") outperforms various manual partitioning heuristics and the previous RL-based
+approach by Hilprecht et all. At the same time, its learning phase is ...
+
+
+
+Abstract
+In this era of Big Data, data-driven applications rely on the efficient and timely analysis of large datasets. This requires a scaleable data analysis platform such as distributed database systems which run on a cluster of multiple computer nodes that share the workload and that can scale easily with increasing data volumes or query workloads by adding more nodes. Distributed database systems are however difficult to configure and optimise, in particular for complex analytical workloads which include many joins operations between different tables. State-of-the-practice is to use a manual approach based on heuristics which easily can lead to sub-optimal data placements. This in turn means longer execution times, and on a cloud-based infrastructure also leads to higher costs because of additional network traffic and more computing resources being needed. This thesis looks at the idea of automating the data placement decisions using a machine learning-based (ML-based) partitioning advisor. The general idea is train a partitioning
+advisor component using Reinforcement Learning with different potential query workloads, such that it 'learns' the best physical data placement in terms of data partitioning (storing table fragments across multiple nodes) and data replication (storing the copies of a table on multiple nodes). Once a corresponding data placement model has been learned, the advisor can then be used as an automatic component of a distributed database to decide automatically given the current database schema and the workload how to place the data for best performance.
+
+To achieve this goal, there are several challenges to be overcome.
+For a successful ML-based approach, the data placement problem for given workloads has to be formalised into corresponding states and actions representations. Further, the thesis applies an approach with separate offline and online learning phases, where the online phase
+will be able to learn hardware effects by actual executing the corresponding query workload on an actual database instance. 
+And lastly, we need different optimisation techniques to avoid exorbitant training times, for example by using an offline phase before the online training phase to rule-out the most sub-optimal data placements, as well as various other optimisations such as query caching and early model convergence. The work in this Honours thesis is based on the ideas of Hilprecht et al (2020) who 
+initially developed the concept of a RL-based partitioning advisor for distributed databases
+using a combined offline/online learning model. This thesis extends this initial work
+in multiple important directions: Firstly, it introduces query featurisation which allows to 
+abstract from query workload variations by considering the normalised query execution 
+plans. Secondly and most importantly, this thesis connects the online training phase with
+the query optimiser of the database systems so that the cost estimates of the database
+can be taken into account too. As we will show in the performance evaluation, this can
+greatly reduce both the training time and lead to better partitioning schemes than with
+a hand-written query cost model as used by Hilprecht et al. Thirdly, the thesis extends 
+the state model such that co-partitioning schemes with composite partition keys are 
+supported, which leads to a clear improvement in the resulting chosen physical designs.
+The approach of this thesis is evaluated with a commercial distributed in-memory database
+and using the TPC-CH benchmark, it is shown that proposed RL4DBPartitioner ("insert your name
+here") outperforms various manual partitioning heuristics and the previous Rl-based
+approach by Hilprecht et al. At the same time, its learning phase is ...

@@ -1,0 +1,20 @@
+\chapter{Network Traffic and Memory Usage}
+\label{appendix:4}
+
+The following values were used to visualise Figures~\ref{fig:network-traffic} and \ref{fig:memory-usage}.
+
+\begin{table}[ht]
+ \centering
+\begin{tabular}{|l|r|r|r|}
+\hline
+\rowcolor[HTML]{DAE8FC} 
+\textbf{\begin{tabular}[c]{@{}l@{}}Partitioning \\ Strategy\end{tabular}}               & \multicolumn{1}{l|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}l@{}}Network \\ Traffic (MB)\end{tabular}}} & \multicolumn{1}{l|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}l@{}}Memory \\ Usage (MB)\end{tabular}}} & \multicolumn{1}{l|}{\cellcolor[HTML]{DAE8FC}\textbf{\begin{tabular}[c]{@{}l@{}}Execution \\ Time (s)\end{tabular}}} \\ \hline
+Heuristic 1                                                                             & 1221.157276                                                                                                           & 15618.49916                                                                                                        & {\color[HTML]{333333} 6.325}                                                                                        \\ \hline
+Heuristic 2                                                                             & 1325.595593                                                                                                           & 3447.576908                                                                                                        & {\color[HTML]{333333} 4.995}                                                                                        \\ \hline
+RL Offline                                                                              & 464.8242676                                                                                                           & 3056.553146                                                                                                        & {\color[HTML]{333333} 4.028}                                                                                        \\ \hline
+\begin{tabular}[c]{@{}l@{}}RL Offline \\ + Online\end{tabular}                          & 448.8186665                                                                                                           & 3052.187241                                                                                                        & {\color[HTML]{333333} 3.912}                                                                                        \\ \hline
+\begin{tabular}[c]{@{}l@{}}RL Offline \\ + Online + \\ Query Featurisation\end{tabular} & 559.1039584                                                                                                           & 2993.809585                                                                                                        & {\color[HTML]{333333} 2.925}                                                                                        \\ \hline
+\end{tabular}
+    \caption{Average network traffic and memory usage across RL partitioning schemes and heuristics.}
+    \label{tab:network-memory}
+\end{table}

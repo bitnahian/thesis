@@ -1,11 +1,11 @@
-\chapter{Optimised Query Plan}
-\label{appendix:1}
+\chapter{Un-optimised Query Plan}
+\label{appendix:2}
 \section{Query Plan output from System-X}
 \subsection{Partitioning Scheme}
 \begin{itemize}
     \item All relations replicated
-    \item orderline \texttt{SHARD KEY(ol\_o\_id, ol\_w\_id, ol\_d\_id)}
-    \item orders \texttt{SHARD KEY(o\_id, o\_w\_id, o\_d\_id)}
+    \item orderline \texttt{SHARD KEY (ol\_i\_id, ol\_d\_id)}
+    \item orders \texttt{SHARD KEY (o\_w\_id, o\_d\_id)}
 
 \end{itemize}
 \begin{listing}[ht]
@@ -14,7 +14,7 @@
             framesep=2mm,
             fontsize=\footnotesize]
             {sql}
-            {listings/opt_query_plan_tpc_ch_05_part_1.out}
+            {listings/unopt_query_plan_tpc_ch_05_part_1.out}
 \end{listing}
 \begin{listing}[ht]
 \inputminted[frame=lines,
@@ -22,7 +22,7 @@
             framesep=2mm,
             fontsize=\footnotesize]
             {sql}
-            {listings/opt_query_plan_tpc_ch_05_part_2.out}
-\caption{Query plan for TPC-CH Query 05 for optimised partitioning scheme}
-\label{listing:tpc-ch-query-05-explain-opt}
+            {listings/unopt_query_plan_tpc_ch_05_part_2.out}
+\caption{Query plan for TPC-CH Query 05 for un-optimised partitioning scheme}
+\label{listing:tpc-ch-query-05-explain-unopt}
 \end{listing}

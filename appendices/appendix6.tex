@@ -1,0 +1,9 @@
+\chapter{System-X Error Codes}
+\label{appendix:6}
+
+The following error codes were observed were responsible for triggering the query optimiser bug in System-X:
+\begin{itemize}
+    \item ERROR 1749 (HY000) at line 1: Feature 'Scalar subselect where outer table is not a sharded table' is not supported by System-X.
+    \item ERROR 1749 (HY000) at line 1: Feature 'Uncorrelated subselect IN-list that is not at bottom of distributed query tree' is not supported System-X.
+    \item ERROR 1713 (HY000) at line 1: The query cannot be executed. System-X does not support this type of query: unsupported nested scalar subselects.
+\end{itemize}

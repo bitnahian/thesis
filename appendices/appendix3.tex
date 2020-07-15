@@ -1,0 +1,21 @@
+\chapter{Query Execution Runtimes}
+\label{appendix:3}
+
+The following values were used to generate the graphs for Figures~\ref{fig:skvsck} and \ref{fig:query-runtimes}.
+
+\begin{table}[ht]
+ \centering
+\begin{tabular}{|l|r|}
+\hline
+\rowcolor[HTML]{DAE8FC} 
+\textbf{Partitioning Strategy}                                                      & \multicolumn{1}{l|}{\cellcolor[HTML]{DAE8FC}\textbf{Query Execution Time (s) x 100}} \\ \hline
+Heuristic 1                                                                         & 867.581                                                                              \\ \hline
+Heuristic 2                                                                         & 733.013                                                                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}RL Offline + Online \\ (Single Key)\end{tabular}         & 2010.21                                                                              \\ \hline
+RL Offline                                                                          & 539.234                                                                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}RL Offline + Online\\ (Compound Key)\end{tabular}        & 521.402                                                                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}RL Online + Offline\\ + Query Featurisation\end{tabular} & 439.24                                                                               \\ \hline
+\end{tabular}
+    \caption{TPC-CH Query execution runtimes on partitionings proposed by DRL agents and heuristics.}
+    \label{tab:query-runtimes}
+\end{table}

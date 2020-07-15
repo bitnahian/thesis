@@ -1,3 +1,7 @@
+HashJoin [orders.o_c_id = customer.c_id AND orders.o_w_id = customer.c_w_id AND orders.o_d_id = customer.c_d_id AND supplier.su_nationkey = customer.`expr(ASCII(SUBSTRING(customer.c_state,?,?)))_0`]
+|---HashTableBuild shared_build:yes alias:customer
+|   Project [customer_0.c_id, customer_0.c_w_id, customer_0.c_d_id, customer_0.c_state, ASCII(SUBSTRING(customer_0.c_state,1,1)) AS `expr(ASCII(SUBSTRING(customer.c_state,?,?)))_0`] est_rows:60,000
+|   TableScan tpcch_test.customer AS customer_0, PRIMARY KEY (c_w_id, c_d_id, c_id) table_type:reference_rowstore est_table_rows:60,000 est_filtered:60,000
 HashJoin [supplier.su_suppkey = stock.s_w_id * stock.s_i_id % 10000 AND supplier.su_nationkey = nation.n_nationkey]
 |---HashTableBuild shared_build:yes alias:supplier
 |   Project [supplier_0.su_suppkey, supplier_0.su_nationkey] est_rows:10,000
